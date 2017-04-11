@@ -36,7 +36,7 @@ function getSpellInfo(spell) {
   var  w=0, u=0, b=0, r=0, g=0, c=0;
   
   if (spell.manaCost) {
-    console.log(spell.name, spell.manaCost);
+    console.log(spell.name, spell.type);
     var colors = spell.manaCost.split('');
     for (var i = 0, len = colors.length; i < len; i++) {
       switch (colors[i]) {
@@ -60,26 +60,34 @@ function getSpellInfo(spell) {
           break;
       }
     }
-  } else
-    console.log(spell.name);
+  }
 
+  if (spell.supertypes)
+    var sup = spell.supertypes;
+  else
+    var sup = [''];
+
+  if (spell.subtypes)
+    var sub = spell.subtypes;
+  else
+    var sub = [''];
 
   spells.push({
-    name        : spell.name,
-    colors      : spell.colorIdentity || [ 'C' ],
-    cmc         : spell.cmc || 0,
-    superTypes  : spell.supertypes || '',
-    types       : spell.types,
-    subtypes    : spell.subtypes || '',
-    img_url     : spell.imageUrl || 'https://goo.gl/LNhefX',
-    power       : spell.power || '',
-    tough       : spell.toughness || '',
-    wCount      : w,
-    uCount      : u,
-    bCount      : b,
-    rCount      : r,
-    gCount      : g,
-    cCount      : c
+    name    : spell.name,
+    colors  : spell.colorIdentity || [ 'C' ],
+    cmc     : spell.cmc || 0,
+    supers  : sup,
+    types   : spell.types,
+    subs    : sub,
+    img_url : spell.imageUrl || 'https://goo.gl/LNhefX',
+    power   : spell.power || '',
+    tough   : spell.toughness || '',
+    wCount  : w,
+    uCount  : u,
+    bCount  : b,
+    rCount  : r,
+    gCount  : g,
+    cCount  : c
   });
 }
 // mtg.card.all({ set: 'AER' })
