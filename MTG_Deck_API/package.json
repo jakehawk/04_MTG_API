@@ -1,0 +1,33 @@
+{
+  "name": "mtg_deck_api",
+  "version": "1.0.0",
+  "description": "seperate api for mtg deck building site",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/jakehawk/04_MTG"
+  },
+  "keywords": [
+    "mtg"
+  ],
+  "author": "Jake Hawkinson",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.16.1",
+    "body-parser": "^1.17.1",
+    "cors": "^2.8.3",
+    "debug": "^2.6.3",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.2",
+    "jsonwebtoken": "^7.3.0",
+    "method-override": "^2.3.8",
+    "mongoose": "^4.9.3",
+    "mongoose-bcrypt": "^1.4.2",
+    "morgan": "^1.8.1",
+    "mtgsdk": "^0.1.1"
+  }
+}
