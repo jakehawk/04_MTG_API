@@ -3,7 +3,7 @@ var jwt = require('jsonwebtoken');
  var User = require('../models/User');
 
  module.exports = {
-   create:       create,
+   createToken:  create,
    refresh:      refresh,
    authenticate: authenticate
  };

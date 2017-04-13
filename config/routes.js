@@ -1,11 +1,15 @@
 var express = require('express'),
 		router 	= express.Router();
-		token 	= require('./token_auth');
+		
 
 var {
 			create, 
 			me
 		} = require('../controllers/users'),
+		{
+			createToken,
+			authenticate
+		} = require('./token_auth'),
 		{
 			getAll,
 			createDeck,
@@ -21,6 +25,11 @@ router.route('/api/users')
 
 	// POST a new user
 	.post(create);
+
+router.route('/api/token')
+
+	// POST new auth token for sure
+	.post(token.create);
 
 router.route('/api/me')
 
