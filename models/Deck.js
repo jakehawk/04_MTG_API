@@ -9,6 +9,20 @@ var DeckSchema = new mongoose.Schema({
 		{
 			info 	: {type: mongoose.Schema.Types.ObjectId, ref: 'StandardSpell'},
 			name  : String,
+			cmc 		: Number,
+			power 	: String,
+			tough 	: String,
+			colors  : [String],
+			supers 	: [String],
+			types 	: [String],
+			subs 		: [String],
+			wCount	: Number,
+			uCount 	: Number,
+			bCount 	: Number,
+			rCount	: Number,
+			gCount	: Number,
+			cCount 	: Number,
+			img_url : String,
 			qty 	: Number,
 			side  : {type: Boolean, default: false, required: true}
 		}

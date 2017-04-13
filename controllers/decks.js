@@ -58,10 +58,23 @@ module.exports.updateDeck = (req, res)=> {
 			if (err) res.json({message: `Could not find spell b/c: ${err}`})
 
 			var spell = {
-				info 	: spells[0]._id,
-				name 	: spells[0].name,
-				qty 	: qty,
-				side 	: side
+				info 		: spells[0]._id,
+				name 		: spells[0].name,
+				cmc 		: spells[0].cmc,
+				power 	: spells[0].power,
+				tough 	: spells[0].tough,
+				colors 	: spells[0].colors,
+				supers 	: spells[0].supers,
+				types 	: spells[0].types,
+				subs 		: spells[0].subs,
+				wCount 	: spells[0].wCount, 
+				uCount 	: spells[0].uCount, 
+				bCount 	: spells[0].bCount, 
+				rCount 	: spells[0].rCount, 
+				gCount 	: spells[0].gCount, 
+				cCount 	: spells[0].cCount, 
+				qty 		: qty,
+				side 		: side
 			};
 
 			var includes 			= indexOfObject(deck.spells, spell.info, spell.side),
