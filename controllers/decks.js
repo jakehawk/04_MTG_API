@@ -73,6 +73,7 @@ module.exports.updateDeck = (req, res)=> {
 				rCount 	: spells[0].rCount, 
 				gCount 	: spells[0].gCount, 
 				cCount 	: spells[0].cCount, 
+				img_url : spells[0].img_url,
 				qty 		: qty,
 				side 		: side
 			};
