@@ -7,8 +7,8 @@ var DeckSchema = new mongoose.Schema({
 	colors 		: [String],
 	spells 		: [
 		{
-			info 	: {type: mongoose.Schema.Types.ObjectId, ref: 'StandardSpell'},
-			name  : String,
+			info 		: {type: mongoose.Schema.Types.ObjectId, ref: 'StandardSpell'},
+			name  	: String,
 			cmc 		: Number,
 			power 	: String,
 			tough 	: String,
@@ -23,8 +23,8 @@ var DeckSchema = new mongoose.Schema({
 			gCount	: Number,
 			cCount 	: Number,
 			img_url : String,
-			qty 	: Number,
-			side  : {type: Boolean, default: false, required: true}
+			qty 		: Number,
+			side  	: {type: Boolean, default: false, required: true}
 		}
 	]
 });
