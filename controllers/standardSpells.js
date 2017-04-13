@@ -13,5 +13,11 @@ module.exports.showSpell = (req, res)=> {
 	var id = req.params.id;
 	console.log(id);
 
+	Standard.find({_id: id}, (err, spell)=> {
+		if (err) res.json({ message: `Could not find spell b/c: ${err}`});
+
+		res.json({spell: spell});
+	}).select('-__v');
+
 	// Standard.findById
-}
+};
