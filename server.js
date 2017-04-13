@@ -1,7 +1,7 @@
 var express 		= require('express'),
 		app 				= express(),
 		path				= require('path'),
-		// cors 				= require('cors'),
+		cors 				= require('cors'),
 		logger 			= require('morgan'),
 		mongoose 		= require('mongoose'),
 		bodyParser 	= require('body-parser');
@@ -11,7 +11,7 @@ mongoose.connect(db);
 
 var routes = require('./config/routes');
 
-// app.use(cors());
+app.use(cors());
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -21,7 +21,7 @@ app.use(routes);
 
 app.use(addFailedAuthHeader);
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 8000;
 
 app.listen(port, 
 	()=> console.log(`Live on port ${port}`)
