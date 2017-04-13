@@ -29,12 +29,12 @@ router.route('/api/users')
 router.route('/api/token')
 
 	// POST new auth token for sure
-	.post(token.create);
+	.post(createToken);
 
 router.route('/api/me')
 
 	// GET user info while logged in
-	.get(token.authenticate, me);
+	.get(authenticate, me);
 
 router.route('/api/decks')
 

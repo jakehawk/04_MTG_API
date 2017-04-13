@@ -59,6 +59,7 @@ module.exports.updateDeck = (req, res)=> {
 
 			var spell = {
 				info 	: spells[0]._id,
+				name 	: spells[0].name,
 				qty 	: qty,
 				side 	: side
 			};
