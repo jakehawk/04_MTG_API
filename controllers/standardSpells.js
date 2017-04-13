@@ -8,3 +8,10 @@ module.exports.allStandard = (req, res)=> {
 		res.json({ spells: spells });
 	}).select('-__v');
 };
+
+module.exports.showSpell = (req, res)=> {
+	var id = req.params.id;
+	console.log(id);
+
+	// Standard.findById
+}

@@ -18,7 +18,8 @@ var {
 			deleteDeck
 		}	= require('../controllers/decks'),
 		{
-			allStandard
+			allStandard,
+			showSpell
 		} = require('../controllers/standardSpells')
 
 router.route('/api/users')
@@ -56,5 +57,10 @@ router.route('/api/standard')
 
 	// GET index of all standard spells
 	.get(allStandard);
+
+router.route('/api/standard/:id')
+
+	// GET show a single standard spell
+	.get(showSpell);
 
 module.exports = router;
