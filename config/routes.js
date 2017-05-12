@@ -4,6 +4,7 @@ var express = require('express'),
 
 var {
 			create, 
+			index,
 			me
 		} = require('../controllers/users'),
 		{
@@ -23,6 +24,9 @@ var {
 		} = require('../controllers/standardSpells')
 
 router.route('/api/users')
+
+	// GET all users
+	.get(index)
 
 	// POST a new user
 	.post(create);
