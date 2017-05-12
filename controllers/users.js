@@ -1,5 +1,6 @@
 var User = require("../models/User");
 
+// Method called when signing up a new user
 module.exports.create = (req, res, next)=> {
   if (!req.body.password) {
     return res.status(422).send('Missing required fields');
@@ -26,6 +27,7 @@ module.exports.create = (req, res, next)=> {
     });
 };
 
+// Method called to return index of all users
 module.exports.index = (req, res, next)=> {
   User.find((err, users)=> {
     if (err) res.json({ message: `Could not find any users b/c: ${err}`});
@@ -34,6 +36,7 @@ module.exports.index = (req, res, next)=> {
   }).select('-__v');
 };
 
+// Method called to return specific user
 module.exports.me = (req, res, next)=> {
   User
     .findOne({ email: req.decoded.email }).exec()
