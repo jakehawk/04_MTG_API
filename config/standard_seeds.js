@@ -116,6 +116,9 @@ function pushInfo (set) {
 // MTG API only returns max 100 items per call
 // 
 axios.all([
+    getCards('akh', 1),
+    getCards('akh', 2),
+    getCards('akh', 3),
     getCards('aer', 1),
     getCards('aer', 2),
     getCards('kld', 1),
@@ -133,11 +136,14 @@ axios.all([
     getCards('bfz', 2),
     getCards('bfz', 3),
   ])
-  .then(axios.spread((aer1, aer2, kld1, kld2, kld3, emn1, emn2, soi1, soi2, soi3, ogw1, ogw2, bfz1, bfz2, bfz3)=> {
+  .then(axios.spread((akh1, akh2, akh3, aer1, aer2, kld1, kld2, kld3, emn1, emn2, soi1, soi2, soi3, ogw1, ogw2, bfz1, bfz2, bfz3)=> {
     Spell.remove({}, (err)=> {
       if (err) throw err;
 
       console.log('Standard database is cleared.');
+      pushInfo(akh1);
+      pushInfo(akh2);
+      pushInfo(akh3);
       pushInfo(aer1);
       pushInfo(aer2);
       pushInfo(kld1);
